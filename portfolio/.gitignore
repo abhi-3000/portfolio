@@ -22,3 +22,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Dependencies
+/node_modules
+
+# Vite build output
+/dist
+
+# Vite cache
+.vite/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
