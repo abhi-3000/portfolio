@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-primary: #d0ff71;
+  --color-dark-secondary: #303030;
+  --color-light-primary: #ffffff;
+  --color-light-secondary: #9CA3AF;
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  /* --- Transitions --- */
+  /* A general-purpose transition for smooth hover effects */
+  --transition-all-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-all-medium: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Animations --- */
+  /* For elements appearing on screen */
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-in-up: slide-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-slide-in-left: slide-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+  /* For call-to-action elements to draw attention */
+  --animate-subtle-pulse: subtle-pulse 2.5s infinite;
+
+  /* For infinite scrolling logos or elements */
+  --animate-infinite-scroll: infinite-scroll 30s linear infinite;
+  --animate-infinite-scroll-reverse: infinite-scroll-reverse 30s linear infinite;
+
+  /* --- Keyframes --- */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-in-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes subtle-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(208, 255, 113, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(208, 255, 113, 0); }
+  }
+  
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+
+  @keyframes infinite-scroll-reverse {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-infinite-scroll-reverse: infinite-scroll-reverse 25s linear infinite;
+
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  @keyframes infinite-scroll-reverse {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }*/
+} 
+
+/* 3 Complimentary Shade
+#27160f – Dark Mahogany Brown
+
+#642f2c – Deep Chestnut Red
+
+#c47a64 – Muted Terra Cotta
+
+🎨 3 Similar Shades
+
+#1b3a4b – Dark Slate Blue
+
+#234e63 – Deep Sea Blue
+
+#132c33 – Charcoal Teal
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @import "tailwindcss";
+
+@theme {
+  --color-dark-primary: #0f2027;
+  --color-dark-secondary: #2c5364;
+  --color-light-primary: #ffffff;
+  --color-light-secondary: #dcdcdc;
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+} */
