@@ -97,10 +97,10 @@ const About = () => {
   };
 
   const interests = [
-    { name: "MERN Stack", icon: <FaCode />, color: "#61DAFB" },
+    { name: "Web Dev", icon: <FaCode />, color: "#61DAFB" },
+    { name: "MERN Stack", icon: <FaLightbulb />, color: "#FFD93D" },
     { name: "Fitness", icon: <FaDumbbell />, color: "#FF6B6B" },
     { name: "Sketching", icon: <FaPalette />, color: "#4ECDC4" },
-    { name: "Clean Code", icon: <FaLightbulb />, color: "#FFD93D" },
     { name: "UI/UX", icon: <FaHeart />, color: "#FF6B9D" },
     { name: "Problem Solving", icon: <FaRocket />, color: "#A8E6CF" },
   ];
@@ -145,7 +145,7 @@ const About = () => {
       {/* Floating Elements */}
       <motion.div
         animate={floatingAnimation}
-        className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-dark-primary/10 to-transparent rounded-full blur-2xl"
+        className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-b from-dark-primary/10 to-transparent rounded-full blur-2xl"
       />
       <motion.div
         animate={{
@@ -202,6 +202,16 @@ const About = () => {
 
               <div className="space-y-4 text-light-secondary/90 text-base sm:text-lg leading-relaxed">
                 <p className="relative pl-4 border-l-2 border-dark-primary/30 hover:border-dark-primary transition-colors duration-300">
+                  Hey there! I'm Abhishek Mandal, currently navigating my final
+                  year of Electronics and Communication Engineering at{" "}
+                  <span className="text-dark-primary font-semibold">
+                    Indian Institute of Information Technology, Ranchi
+                  </span>
+                  . While my degree is in ECE, my real passion sparked when I
+                  dove into the world of web development.
+                </p>
+
+                <p className="relative pl-4 border-l-2 border-dark-primary/30 hover:border-dark-primary transition-colors duration-300">
                   As a{" "}
                   <span className="text-dark-primary font-semibold">
                     MERN Stack Developer
@@ -210,6 +220,16 @@ const About = () => {
                   elegant, user-centric digital experiences. I thrive on
                   building scalable web applications from the ground up.
                 </p>
+
+                {/* <p className="relative pl-4 border-l-2 border-dark-primary/30 hover:border-dark-primary transition-colors duration-300">
+                  As a{" "}
+                  <span className="text-dark-primary font-semibold">
+                    MERN Stack Developer
+                  </span>
+                  , my passion lies in translating complex problems into
+                  elegant, user-centric digital experiences. I thrive on
+                  building scalable web applications from the ground up.
+                </p> */}
 
                 <p className="relative pl-4 border-l-2 border-dark-primary/30 hover:border-dark-primary transition-colors duration-300">
                   Beyond the screen, my discipline is forged in the{" "}
@@ -361,131 +381,3 @@ const About = () => {
 };
 
 export default About;
-
-// import React from "react";
-// import { motion } from "framer-motion";
-
-// const About = () => {
-//   // Animation for the container to stagger children
-//   const containerVariants = {
-//     hidden: { opacity: 0 },
-//     visible: {
-//       opacity: 1,
-//       transition: {
-//         staggerChildren: 0.3,
-//       },
-//     },
-//   };
-
-//   // Animation for the text content (slide in from left)
-//   const textVariants = {
-//     hidden: { opacity: 0, x: -50 },
-//     visible: {
-//       opacity: 1,
-//       x: 0,
-//       transition: {
-//         duration: 0.8,
-//         ease: "easeOut",
-//       },
-//     },
-//   };
-
-//   // Animation for the image (slide in from right)
-//   const imageVariants = {
-//     hidden: { opacity: 0, x: 50, scale: 0.9 },
-//     visible: {
-//       opacity: 1,
-//       x: 0,
-//       scale: 1,
-//       transition: {
-//         duration: 0.8,
-//         ease: "easeOut",
-//       },
-//     },
-//   };
-
-//   const interests = [
-//     "MERN Stack",
-//     "Fitness",
-//     "Sketching",
-//     "Clean Code",
-//     "UI/UX",
-//     "Problem Solving",
-//   ];
-
-//   return (
-//     <section
-//       id="about"
-//       className="w-full bg-dark-secondary font-inter py-24 sm:py-32 overflow-hidden"
-//     >
-//       <motion.div
-//         className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-//         variants={containerVariants}
-//         initial="hidden"
-//         whileInView="visible"
-//         viewport={{ once: true, amount: 0.3 }}
-//       >
-//         {/* Left Side: Text Content */}
-//         <motion.div variants={textVariants}>
-//           <h2 className="text-3xl sm:text-4xl font-bold text-light-primary tracking-tight mb-4">
-//             A Little Bit About Me
-//             <span className="block h-1 w-20 bg-dark-primary mt-2"></span>
-//           </h2>
-//           <p className="text-light-secondary text-base sm:text-lg leading-relaxed">
-//             As a MERN Stack Developer, my passion lies in translating complex
-//             problems into elegant, user-centric digital experiences. I thrive on
-//             building scalable web applications from the ground up, bringing
-//             ideas to life with clean and efficient code.
-//             <br />
-//             <br />
-//             Beyond the screen, my discipline is forged in the gym. Being a
-//             fitness freak has taught me persistence and resilience—qualities I
-//             channel into debugging complex issues. My creativity flows from
-//             pencil to canvas; as a sketch artist, I have an ingrained eye for
-//             detail and aesthetics. This unique blend of analytical thinking and
-//             artistic vision is my secret sauce for crafting not just functional,
-//             but pixel-perfect interfaces.
-//           </p>
-//           <div className="mt-8">
-//             <h3 className="text-light-primary font-semibold mb-3">
-//               Interests & Expertise:
-//             </h3>
-//             <div className="flex flex-wrap gap-3">
-//               {interests.map((interest, index) => (
-//                 <span
-//                   key={index}
-//                   className="bg-dark-primary/10 text-dark-primary text-sm font-medium px-4 py-2 rounded-full border border-dark-primary/30"
-//                 >
-//                   {interest}
-//                 </span>
-//               ))}
-//             </div>
-//           </div>
-//         </motion.div>
-
-//         {/* Right Side: Image */}
-//         <motion.div
-//           variants={imageVariants}
-//           className="flex justify-center items-center"
-//         >
-//           <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 group">
-//             <div className="absolute inset-0 bg-dark-primary rounded-2xl transform -rotate-6 transition-transform duration-500 group-hover:rotate-0"></div>
-//             <div className="absolute inset-0 bg-light-primary/10 backdrop-blur-sm rounded-2xl transform rotate-6 transition-transform duration-500 group-hover:rotate-0"></div>
-//             <img
-//               src="https://placehold.co/400x400/303030/d0ff71?text=Your\nImage" // Replace with your image URL
-//               alt="Abhishek Mandal"
-//               className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
-//               onError={(e) => {
-//                 e.target.onerror = null;
-//                 e.target.src =
-//                   "https://placehold.co/400x400/303030/d0ff71?text=Your\nImage";
-//               }}
-//             />
-//           </div>
-//         </motion.div>
-//       </motion.div>
-//     </section>
-//   );
-// };
-
-// export default About;

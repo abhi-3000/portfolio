@@ -1,59 +1,56 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  IoSchoolOutline,
-  IoTrophyOutline,
-  IoRibbonOutline,
-  IoStarOutline,
-} from "react-icons/io5";
+  FaGraduationCap,
+  FaTrophy,
+  FaAward,
+  FaStar,
+  FaCode,
+} from "react-icons/fa";
 
-// --- Data Arrays ---
 const educationData = [
   {
-    icon: <IoSchoolOutline size={28} />,
+    icon: <FaGraduationCap size={28} />,
     institution: "IIIT Ranchi",
     degree: "B.Tech, Electronics & Communication Engineering",
     duration: "2022 - 2026",
-    score: "CGPA: 7.0 / 10",
   },
   {
-    icon: <IoSchoolOutline size={28} />,
-    institution: "DAV Public School, Jamshedpur", // Replace with your school
+    icon: <FaGraduationCap size={28} />, 
+    institution: "Placeholder School, City", 
     degree: "Class XII (CBSE)",
     duration: "Completed: 2021",
-    score: "Percentage: 79%", // Replace with your score
   },
   {
-    icon: <IoSchoolOutline size={28} />,
-    institution: "Motilal Nehru Public School, Jamshedpur", // Replace with your school
-    degree: "Class X (ICSE)",
-    duration: "Completed: 2019",
-    score: "Percentage: 94%", // Replace with your score
+    icon: <FaGraduationCap size={28} />, 
+    institution: "Placeholder School, City", 
+    degree: "Class X (CBSE)",
+    duration: "Completed: 2019", 
   },
 ];
 
+
 const achievementsData = [
-  //   {
-  //     icon: <IoTrophyOutline size={24} />,
-  //     title: "Codeforces Specialist",
-  //     description:
-  //       "Achieved a peak rating of 1450+ on Codeforces, solving over 500 algorithmic problems.",
-  //   },
   {
-    icon: <IoRibbonOutline size={24} />,
+    icon: <FaAward size={24} />,
     title: "Hackathon Runner-Up",
     description:
       "Finished with Rank 3 in the college’s internal round of Smart India Hackathon.",
   },
   {
-    icon: <IoStarOutline size={24} />,
+    icon: <FaStar size={24} />,
     title: "Top Performer in DSA",
     description:
-      "Consistently ranked in the top 10% in Data Structures & Algorithms coursework and contests. Also, solved over 200 problems in DSA & CP domain",
+      "Consistently ranked in the top 10% in all Data Structures & Algorithms coursework and contests.",
+  },
+  {
+    icon: <FaCode size={24} />,
+    title: "CodeChef 2-Star Coder",
+    description:
+      "Actively honing problem-solving skills through consistent practice in Competitive Programming and DSA on platforms like CodeChef.",
   },
 ];
 
-// --- Animation Variants ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -71,7 +68,7 @@ const itemVariants = {
   },
 };
 
-// --- Main Component ---
+
 const Education = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -97,7 +94,7 @@ const Education = () => {
       id="education"
       className="relative w-full bg-dark-secondary font-inter py-24 sm:py-32 overflow-hidden"
     >
-      {/* Background Effects */}
+      
       <div
         className="absolute inset-0 z-0 transition-all duration-300"
         style={{
@@ -113,7 +110,7 @@ const Education = () => {
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: -30 }}
@@ -133,9 +130,9 @@ const Education = () => {
           </p>
         </motion.div>
 
-        {/* Main Grid Layout */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Education Column */}
+          
           <motion.div
             className="space-y-8"
             variants={containerVariants}
@@ -172,7 +169,7 @@ const Education = () => {
             ))}
           </motion.div>
 
-          {/* Achievements Column */}
+          
           <motion.div
             className="space-y-6"
             variants={containerVariants}

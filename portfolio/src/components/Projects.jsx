@@ -1,21 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import ca from "../assets/ca_ss.png";
-import tapin from "../assets/tapin_ss.png"; 
+import tapin from "../assets/tapin_ss.png";
+import apex from "../assets/apex_ss.png";
 import {
   FaGithub,
   FaExternalLinkAlt,
   FaReact,
   FaNodeJs,
+  FaKey,
+  FaCloud,
+  FaMapMarkerAlt,
+  FaServer,
+  FaBrain,
 } from "react-icons/fa";
 import {
-  IoLeafOutline,
-  IoColorPaletteOutline,
-  IoServerOutline,
-} from "react-icons/io5";
+  SiMongodb,
+  SiTailwindcss,
+  SiExpress,
+  SiTypescript,
+  SiRedux,
+  SiVercel,
+  SiGooglegemini,
+  SiCloudinary,
+} from "react-icons/si"; // Added SiCloudinary
 
 // --- Projects Data ---
-// Add your project details here
 const projectsData = [
   {
     title: "NK Consultancy",
@@ -53,22 +64,52 @@ const projectsData = [
       "Cloudinary",
       "Multer",
     ],
-    imageUrl:
-      tapin,
+    imageUrl: tapin,
     liveLink: "https://tap-in-kappa.vercel.app/",
     githubLink: "https://github.com/abhi-3000/TapIn",
+  },
+  // --- Updated Third Project ---
+  {
+    title: "Apex Hire | AI Interview Platform",
+    description:
+      "Architected an AI interview platform using React/TypeScript & Vercel Serverless Functions. Integrates Gemini API for resume parsing, answer evaluation, & candidate leaderboards with detailed reports. Features Redux Toolkit (Persist) for session management & a responsive UI via shadcn/ui.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "Vercel Serverless Functions",
+      "Gemini API",
+      "shadcn/ui",
+      "Framer Motion",
+      "Tailwind CSS",
+    ],
+    imageUrl: apex,
+    liveLink:
+      "https://apex-hire-8pej0evvr-abhishek-mandals-projects-e004a46c.vercel.app/",
+    githubLink: "https://github.com/abhi-3000/apex-hire",
   },
 ];
 
 // --- Tech Tag Component for mapping icons ---
+// Updated to use Fa and Si consistently
 const techIcons = {
   React: <FaReact />,
   "Node.js": <FaNodeJs />,
-  MongoDB: <IoLeafOutline />,
-  "Tailwind CSS": <IoColorPaletteOutline />,
-  Express: <IoServerOutline />,
-  JWT: null,
+  MongoDB: <SiMongodb />, // Use Si icon
+  "Tailwind CSS": <SiTailwindcss />,
+  Express: <SiExpress />,
+  JWT: <FaKey />,
   CSS3: null,
+  Razorpay: null,
+  Cloudinary: <SiCloudinary />, // Use Si icon
+  Multer: null,
+  "Framer Motion": null,
+  "Gemini API": <SiGooglegemini />,
+  Mapbox: <FaMapMarkerAlt />, // Use Fa Map marker
+  TypeScript: <SiTypescript />,
+  "Redux Toolkit": <SiRedux />,
+  "Vercel Functions": <SiVercel />, // Use Si Vercel icon
+  "shadcn/ui": null,
 };
 
 // --- Main Component ---
@@ -77,9 +118,14 @@ const Projects = () => {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
+      const viewportX = e.clientX;
+      const viewportY = e.clientY;
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const relativeY = viewportY + scrollY;
+
       setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / document.body.scrollHeight) * 100,
+        x: (viewportX / window.innerWidth) * 100,
+        y: (relativeY / document.body.scrollHeight) * 100,
       });
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -141,12 +187,12 @@ const Projects = () => {
               className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              {/* Laptop Graphic - order-first on mobile, alternates on desktop */}
+              {/* Laptop Graphic */}
               <motion.div
-                className={`relative w-full h-full ${
+                className={`relative w-full ${
                   index % 2 === 0 ? "lg:order-last" : ""
                 }`}
                 whileHover={{ scale: 1.03 }}
@@ -159,10 +205,14 @@ const Projects = () => {
                       src={project.imageUrl}
                       alt={project.title}
                       className="w-full h-full object-cover object-top"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = `https://placehold.co/1280x800/3a3a3a/d0ff71?text=Project+Error`;
+                      }}
                     />
                   </div>
                   {/* Laptop base */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] h-4 bg-gray-800 rounded-b-lg border-x-4 border-b-4 border-gray-900">
+                  <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-[110%] h-4 bg-gray-800 rounded-b-lg border-x-4 border-b-4 border-gray-900 z-[-1]">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-1 bg-gray-600 rounded-full" />
                   </div>
                 </div>
@@ -182,7 +232,13 @@ const Projects = () => {
                       key={tag}
                       className="flex items-center gap-2 bg-dark-primary/10 text-dark-primary text-sm font-medium px-3 py-1.5 rounded-full border border-dark-primary/30"
                     >
-                      {techIcons[tag]} {tag}
+                      {/* Render icon only if it exists in the map */}
+                      {techIcons[tag]
+                        ? React.cloneElement(techIcons[tag], {
+                            className: "text-lg",
+                          })
+                        : null}
+                      {tag}
                     </span>
                   ))}
                 </div>
@@ -191,7 +247,15 @@ const Projects = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 overflow-hidden rounded-lg font-bold bg-dark-primary text-dark-secondary transition-all duration-300 hover:scale-105 active:scale-95"
+                    className={`group relative inline-flex items-center justify-center gap-2 px-6 py-3 overflow-hidden rounded-lg font-bold bg-dark-primary text-dark-secondary transition-all duration-300 hover:scale-105 active:scale-95 ${
+                      project.liveLink === "#"
+                        ? "opacity-50 cursor-not-allowed pointer-events-none"
+                        : ""
+                    }`}
+                    aria-disabled={project.liveLink === "#"}
+                    onClick={(e) =>
+                      project.liveLink === "#" && e.preventDefault()
+                    }
                   >
                     <FaExternalLinkAlt />
                     <span>Live Demo</span>
@@ -200,7 +264,15 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 overflow-hidden rounded-lg font-bold bg-light-primary/10 text-light-primary border border-light-primary/20 transition-all duration-300 hover:bg-light-primary/20 hover:scale-105 active:scale-95"
+                    className={`group relative inline-flex items-center justify-center gap-2 px-6 py-3 overflow-hidden rounded-lg font-bold bg-light-primary/10 text-light-primary border border-light-primary/20 transition-all duration-300 hover:bg-light-primary/20 hover:scale-105 active:scale-95 ${
+                      project.githubLink === "#"
+                        ? "opacity-50 cursor-not-allowed pointer-events-none"
+                        : ""
+                    }`}
+                    aria-disabled={project.githubLink === "#"}
+                    onClick={(e) =>
+                      project.githubLink === "#" && e.preventDefault()
+                    }
                   >
                     <FaGithub />
                     <span>View Code</span>

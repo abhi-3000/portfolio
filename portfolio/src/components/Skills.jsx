@@ -15,7 +15,7 @@ import {
   FaBrain,
   FaRobot,
   FaUpload,
-} from "react-icons/fa6";
+} from "react-icons/fa";
 import {
   IoServerOutline,
   IoLeafOutline,
@@ -23,15 +23,55 @@ import {
   IoRocketOutline,
   IoLogoVercel,
 } from "react-icons/io5";
+import {
+  SiTypescript,
+  SiCplusplus,
+  SiRedux,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiCloudinary,
+  SiRender,
+  SiJsonwebtokens,
+  SiGooglegemini,
+  SiOpenai,
+  SiPostman,
+  SiTailwindcss,
+  SiVercel,
+  SiGit,
+} from "react-icons/si";
+// import {
+//   FaReact,
+//   FaNodeJs,
+//   FaJs,
+//   FaHtml5,
+//   FaCss3Alt,
+//   FaGitAlt,
+//   FaBootstrap,
+//   FaDatabase,
+//   FaCloud,
+//   FaServer,
+//   FaKey,
+//   FaBrain,
+//   FaRobot,
+//   FaUpload,
+// } from "react-icons/fa";
+// import {
+//   IoServerOutline,
+//   IoLeafOutline,
+//   IoColorPaletteOutline,
+//   IoRocketOutline,
+//   IoLogoVercel,
+// } from "react-icons/io5";
 
 // --- Updated Data Structure with Descriptions ---
 const skillsData = {
-  Frontend: [
+  Languages: [
     {
-      name: "React",
-      icon: <FaReact size={32} />,
-      color: "#61DAFB",
-      description: "Building dynamic, component-based user interfaces.",
+      name: "C++",
+      icon: <SiCplusplus size={32} />,
+      color: "#00599C",
+      description: "Strong foundation for algorithms and system programming.",
     },
     {
       name: "JavaScript",
@@ -40,11 +80,31 @@ const skillsData = {
       description: "Powering interactive and dynamic web experiences.",
     },
     {
+      name: "TypeScript",
+      icon: <SiTypescript size={32} />,
+      color: "#3178C6",
+      description: "Superset of JavaScript adding static types for robustness.",
+    },
+  ],
+  Frontend: [
+    {
+      name: "React",
+      icon: <FaReact size={32} />,
+      color: "#61DAFB",
+      description: "Building dynamic, component-based user interfaces.",
+    },
+    {
+      name: "Redux",
+      icon: <SiRedux size={32} />,
+      color: "#764ABC",
+      description: "Predictable state container for JavaScript apps.",
+    },
+    {
       name: "Tailwind CSS",
-      icon: <IoColorPaletteOutline size={32} />,
+      icon: <SiTailwindcss size={32} />,
       color: "#38B2AC",
       description: "Crafting bespoke designs with utility-first CSS.",
-    },
+    }, // Changed icon
     {
       name: "HTML5",
       icon: <FaHtml5 size={32} />,
@@ -74,73 +134,80 @@ const skillsData = {
     },
     {
       name: "Express.js",
-      icon: <IoServerOutline size={32} />,
+      icon: <SiExpress size={32} />,
       color: "#FFFFFF",
       description: "Minimalist framework for creating robust APIs.",
-    },
+    }, // Changed icon
   ],
   Databases: [
     {
       name: "MongoDB",
-      icon: <IoLeafOutline size={32} />,
+      icon: <SiMongodb size={32} />,
       color: "#47A248",
       description: "Flexible NoSQL database for scalable applications.",
-    },
+    }, // Changed icon
     {
       name: "MySQL",
-      icon: <FaDatabase size={32} />,
+      icon: <SiMysql size={32} />,
       color: "#4479A1",
       description: "Reliable relational database for structured data.",
-    },
+    }, // Changed icon
   ],
   "Tools & Platforms": [
     {
       name: "Git",
-      icon: <FaGitAlt size={32} />,
+      icon: <SiGit size={32} />,
       color: "#F05032",
       description: "Essential version control for code collaboration.",
-    },
+    }, // Changed icon
     {
       name: "Render",
-      icon: <FaServer size={32} />,
+      icon: <SiRender size={32} />,
       color: "#46E3B7",
       description: "Cloud platform for deploying and scaling applications.",
-    },
+    }, // Changed icon
     {
       name: "Vercel",
-      icon: <IoLogoVercel size={32} />,
+      icon: <SiVercel size={32} />,
       color: "#FFFFFF",
       description: "Seamless platform for deploying modern web apps.",
-    },
+    }, // Changed icon
     {
       name: "Cloudinary",
-      icon: <FaCloud size={32} />,
+      icon: <SiCloudinary size={32} />,
       color: "#3448C5",
       description: "Cloud service for managing images and videos.",
-    },
+    }, // Changed icon
     {
       name: "Multer",
       icon: <FaUpload size={32} />,
       color: "#CCCCCC",
       description: "Node.js middleware for handling file uploads.",
-    },
+    }, // Kept FaUpload
     {
       name: "JWT Auth",
-      icon: <FaKey size={32} />,
+      icon: <SiJsonwebtokens size={32} />,
       color: "#FB015B",
       description: "Implementing secure, token-based authentication.",
-    },
+    }, // Changed icon
     {
       name: "Gemini AI",
-      icon: <FaBrain size={32} />,
+      icon: <SiGooglegemini size={32} />,
       color: "#8E44AD",
       description: "Integrating Google's powerful generative AI models.",
-    },
+    }, // Changed icon
     {
       name: "OpenAI API",
-      icon: <FaRobot size={32} />,
+      icon: <SiOpenai size={32} />,
       color: "#412991",
       description: "Leveraging advanced AI for various applications.",
+    }, // Changed icon
+    // Note: Postman doesn't have a direct 'Fa' or 'Io5' equivalent easily findable, SiPostman is best
+    {
+      name: "Postman",
+      icon: <SiPostman size={32} />,
+      color: "#FF6C37",
+      description: "Platform for building, testing, and documenting APIs.",
     },
   ],
 };
