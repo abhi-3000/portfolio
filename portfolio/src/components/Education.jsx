@@ -17,14 +17,14 @@ const educationData = [
   },
   {
     icon: <FaGraduationCap size={28} />, 
-    institution: "Placeholder School, City", 
+    institution: "DAV Public School, Jamshedpur", 
     degree: "Class XII (CBSE)",
     duration: "Completed: 2021",
   },
   {
     icon: <FaGraduationCap size={28} />, 
-    institution: "Placeholder School, City", 
-    degree: "Class X (CBSE)",
+    institution: "Motilal Nehru Public School, Jamshedpur", 
+    degree: "Class X (ICSE)",
     duration: "Completed: 2019", 
   },
 ];
