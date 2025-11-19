@@ -11,6 +11,7 @@ import {
 const navLinks = [
   { href: "#about", text: "About" },
   { href: "#skills", text: "Skills" },
+  { href: '#experience', text: 'Experience' },
   { href: "#projects", text: "Projects" },
   { href: "#education", text: "Education" },
 ];

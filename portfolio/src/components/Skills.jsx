@@ -4,13 +4,14 @@ import {
   FaReact,
   FaNodeJs,
   FaJs,
+  FaTags,
+  FaDatabase,
+  FaServer,
   FaHtml5,
   FaCss3Alt,
   FaGitAlt,
   FaBootstrap,
-  FaDatabase,
   FaCloud,
-  FaServer,
   FaKey,
   FaBrain,
   FaRobot,
@@ -40,29 +41,7 @@ import {
   SiVercel,
   SiGit,
 } from "react-icons/si";
-// import {
-//   FaReact,
-//   FaNodeJs,
-//   FaJs,
-//   FaHtml5,
-//   FaCss3Alt,
-//   FaGitAlt,
-//   FaBootstrap,
-//   FaDatabase,
-//   FaCloud,
-//   FaServer,
-//   FaKey,
-//   FaBrain,
-//   FaRobot,
-//   FaUpload,
-// } from "react-icons/fa";
-// import {
-//   IoServerOutline,
-//   IoLeafOutline,
-//   IoColorPaletteOutline,
-//   IoRocketOutline,
-//   IoLogoVercel,
-// } from "react-icons/io5";
+
 
 // --- Updated Data Structure with Descriptions ---
 const skillsData = {
@@ -87,6 +66,12 @@ const skillsData = {
     },
   ],
   Frontend: [
+    {
+      name: "Next.js",
+      icon: <FaReact size={32} />,
+      color: "#FFFFFF",
+      description: "The React Framework for Production.",
+    },
     {
       name: "React",
       icon: <FaReact size={32} />,
@@ -145,13 +130,19 @@ const skillsData = {
       icon: <SiMongodb size={32} />,
       color: "#47A248",
       description: "Flexible NoSQL database for scalable applications.",
-    }, // Changed icon
+    },
+    {
+      name: "Supabase",
+      icon: <FaDatabase size={32} />,
+      color: "#3ECF8E",
+      description: "Open source Firebase alternative.",
+    },
     {
       name: "MySQL",
       icon: <SiMysql size={32} />,
       color: "#4479A1",
       description: "Reliable relational database for structured data.",
-    }, // Changed icon
+    },
   ],
   "Tools & Platforms": [
     {
@@ -160,6 +151,12 @@ const skillsData = {
       color: "#F05032",
       description: "Essential version control for code collaboration.",
     }, // Changed icon
+    {
+      name: "Hostinger",
+      icon: <FaServer size={32} />,
+      color: "#673DE6",
+      description: "Reliable web hosting solutions.",
+    },
     {
       name: "Render",
       icon: <SiRender size={32} />,
@@ -208,6 +205,12 @@ const skillsData = {
       icon: <SiPostman size={32} />,
       color: "#FF6C37",
       description: "Platform for building, testing, and documenting APIs.",
+    },
+    {
+      name: "Google Tag Manager",
+      icon: <FaTags size={32} />,
+      color: "#246FDB",
+      description: "Manage marketing tags without editing code.",
     },
   ],
 };

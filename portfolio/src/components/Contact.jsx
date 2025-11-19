@@ -108,8 +108,7 @@ const Contact = () => {
               Let's Build Something Great
             </h2>
             <p className="text-lg text-light-secondary max-w-md mx-auto lg:mx-0">
-              I'm currently available for freelance projects and open to
-              discussing new opportunities. Whether you have a question or just
+              I'm currently available discussing new opportunities. Whether you have a question or just
               want to connect, feel free to reach out.
             </p>
           </motion.div>

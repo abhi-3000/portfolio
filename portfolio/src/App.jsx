@@ -7,21 +7,23 @@ import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Experience from "./components/Experience";
 function App() {
   
   return (
     <>
-      <Navbar/>
+      <Navbar />
       {/* <Hero1/> */}
-      <Hero/>
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Education/>
-      <Contact/>
-      <Footer/>
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Education />
+      <Contact />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App
